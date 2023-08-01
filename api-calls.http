@@ -1,0 +1,30 @@
+###
+POST http://localhost:4009/api/phonebill/total
+content-type: application/json
+
+{
+    "bill" : "call,sms,call"
+}
+
+# ###
+# GET http://localhost:4009/api/phonebill/prices
+
+
+###
+POST http://localhost:4009/api/phonebill/price
+content-type: application/json
+
+{
+    "type" : "sms",
+    "price" : 2.85
+}
+
+###
+POST http://localhost:4009/api/enough
+content-type: application/json
+
+{
+    "projectedUsage" : "call,sms,call",
+    "airtimeAvailable" : 54
+}
+

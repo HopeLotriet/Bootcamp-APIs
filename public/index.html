@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="bootcamp.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <heading class="heading">Bootcamp Functions API</heading>
+    <br>
+
+    <div class="container" x-data="bootcampAPI">
+
+
+
+        <div class="widget">
+            <h1>Word widget</h1>
+
+            <div>
+                <textarea x-model="sentence" name="" id="" cols="30" rows="5"
+                    placeholder="Please enter text"></textarea>
+                <br>
+                <br>
+                <div><button x-on:click="checkSentence">Check Sentence</button>
+                </div>
+            </div>
+            <br>
+
+            <div class="sentence">
+                <div>
+                    Longest word: <span x-text="longestWord"></span>
+                </div>
+                <br>
+
+                <div>
+                    Shortest word: <span x-text="shortestWord"></span>
+                </div>
+                <br>
+                <div>
+                    Word count: <span x-text="wordCount"></span>
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+
+        <div class="widget">
+
+            <h1>Phone Bill Widget</h1>
+
+
+            <label for="phoneBill">Enter Phone Bill</label>
+            <input type="text" id="phoneBill" x-model="phoneBill" placeholder="e.g. call,sms">
+            <br>
+            <br>
+            <button x-on:click="totalPhoneBill">Bill Total</button>
+            <br>
+            <div x-show="billMessage.length > 0" x-text="billMessage"></div>
+
+
+        </div>
+        <br>
+
+
+        <div class="widget">
+            <h1>Enough Airtime Widget</h1>
+
+            <div>
+                <label for="projectedUsage">Usage Projection:</label>
+                <input type="text" x-model="projectedUsage" id="projectedUsage" placeholder="e.g. call,sms">
+            </div>
+            <br>
+            <div>
+                <label for="airtimeAvailable">Total Airtime Available:</label>
+                <input type="number" x-model="airtimeAvailable" id="airtimeAvailable">
+            </div>
+            <br>
+            <button x-on:click="calculate()">Check</button>
+            <div x-show="airtimeMessage.length >0">
+                <span x-text="airtimeMessage"></span></p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <hr>
+
+
+
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+</body>
+
+</html>
